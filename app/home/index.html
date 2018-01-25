@@ -1,0 +1,18 @@
+<h1 ng-cloak>Timeline</h1>
+
+<div class="panel panel-default" ng-repeat="post in vm.user.posts" ng-cloak>
+	<div class="panel-heading">
+		<img class="floating-pp pp" src="https://png.icons8.com/ios/50/000000/user-filled.png">
+		<strong class="text-capitalize">{{vm.user.firstName}} posted {{post.title}}</strong>
+				
+		<div class="floating-btn" ng-if="post.sharetype=='Public'"><img class="icon" src="https://png.icons8.com/metro/50/000000/public.png"></div>
+		<div class="floating-btn" ng-if="post.sharetype=='Private'"><img class="icon" src="https://png.icons8.com/metro/50/000000/block.png"></div>
+		<div class="floating-btn"><img class="icon" src="https://png.icons8.com/metro/50/000000/thumb-up.png"></div>
+		<div class="floating-btn"><img class="icon" src="https://png.icons8.com/metro/50/000000/thumb-down.png"></div>
+		
+		<div><small>Posted on {{post.date | date : 'medium'}}</small></div>
+	</div>
+	<div class="panel-body text-capitalize">{{post.description}}</div>
+</div>
+
+
