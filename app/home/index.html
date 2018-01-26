@@ -1,6 +1,6 @@
-<h1 ng-cloak>Timeline</h1>
+<h1 ng-cloak class="w3-animate-left">Timeline</h1>
 
-<div class="panel panel-default" ng-repeat="post in vm.user.posts" ng-cloak>
+<div class="panel panel-default w3-animate-opacity" ng-repeat="post in vm.user.posts" ng-cloak>
 	<div class="panel-heading">
 		<img class="floating-pp pp" src="https://png.icons8.com/ios/50/000000/user-filled.png">
 		<strong class="text-capitalize">{{vm.user.firstName}} posted {{post.title}}</strong>
@@ -12,7 +12,16 @@
 		
 		<div><small>Posted on {{post.date | date : 'medium'}}</small></div>
 	</div>
-	<div class="panel-body text-capitalize">{{post.description}}</div>
+	<div class="panel-body text-capitalize w3-animate-opacity">
+		{{post.description}}
+		<div class="container image-viewer">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" ng-repeat="file in post.uploadedfiles">
+					<img class="img-responsive" ng-src="uploads/{{ file.filename}}">
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 

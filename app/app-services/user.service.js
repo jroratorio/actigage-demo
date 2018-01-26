@@ -44,13 +44,15 @@
         
         function AddPost(user, post) {
             post.date = new Date();
+            delete post['file'];
             
             var postdata = {
                 username: user.username,
                 post: post,
                 timestamp: new Date()
             };
-            return $http.post('/api/users/post', postdata).then(handleSuccess, handleError);            
+            
+            return $http.post('/api/users/post', postdata).then(handleSuccess, handleError);
         }
         
         // private functions
