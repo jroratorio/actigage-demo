@@ -14,8 +14,6 @@
         service.GetByUsername = GetByUsername;
         service.Create = Create;
         service.Update = Update;
-        service.Delete = Delete;
-        service.GetAllPosts = GetAllPosts;
         service.AddPost = AddPost;
         
         return service;
@@ -42,15 +40,7 @@
 
         function Update(user) {
             return $http.put('/api/users/' + user._id, user).then(handleSuccess, handleError);
-        }
-
-        function Delete(_id) {
-            return $http.delete('/api/users/' + _id).then(handleSuccess, handleError);
-        }
-        
-        function GetAllPosts(_id) {
-            //return $http.get('/api/users/' + _id + '/post').then(handleSuccess, handleError);
-        }
+        }       
         
         function AddPost(user, post) {
             post.date = new Date();

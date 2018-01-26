@@ -8,7 +8,6 @@ router.post('/authenticate', authenticateUser);
 router.post('/register', registerUser);
 router.get('/current', getCurrentUser);
 router.put('/:_id', updateUser);
-router.delete('/:_id', deleteUser);
 router.post('/post', addPost);
 
 module.exports = router;
@@ -61,22 +60,6 @@ function updateUser(req, res) {
     }
 
     userService.update(userId, req.body)
-        .then(function () {
-            res.sendStatus(200);
-        })
-        .catch(function (err) {
-            res.status(400).send(err);
-        });
-}
-
-function deleteUser(req, res) {
-    var userId = req.user.sub;
-    if (req.params._id !== userId) {
-        // can only delete own account
-        return res.status(401).send('You can only delete your own account');
-    }
-
-    userService.delete(userId)
         .then(function () {
             res.sendStatus(200);
         })
