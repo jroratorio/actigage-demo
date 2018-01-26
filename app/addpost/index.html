@@ -1,6 +1,6 @@
 ﻿<h1>Add post</h1>
 <div class="form-container">
-    <form method="post">
+    <form method="post" name="vm.upload_form">
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" id="title" class="form-control" placeholder="{{vm.placeholder.title}}" ng-model="vm.post.title" required />
@@ -16,6 +16,20 @@
             <label for="description">Description</label>
             <textarea rows="10" id="description" class="form-control" placeholder="{{vm.placeholder.description}}" ng-model="vm.post.description" required ></textarea>
         </div>
+		
+<!--		<input 
+               type="file" 
+               ngf-select 
+               ng-model="vm.post.file" 
+               name="file" 
+               ngf-pattern="'image/*'"
+               accept="image/*" 
+               ngf-max-size="20MB" 
+               />
+        Image thumbnail: <img style="width:100px;" ngf-thumbnail="vm.post.file || '/thumb.jpg'"/>
+        <i ng-show="vm.upload_form.file.$error.maxSize">File too large {{vm.post.file.size / 1000000|number:1}}MB: max 20M</i>
+        <p>{{vm.progress}}</p>-->
+		
         <div class="form-group">
             <button class="btn btn-primary" ng-click="vm.addPost()">Save</button>            
         </div>

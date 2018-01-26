@@ -38,6 +38,9 @@
             UserService.AddPost(vm.user, vm.post)
                 .then(function () {
                     FlashService.Success('Post added');
+                    vm.post.title = '';
+                    vm.post.description = '';
+                    vm.post.sharetype = 'Public';
                 })
                 .catch(function (error) {
                     FlashService.Error(error);

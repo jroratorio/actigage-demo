@@ -187,10 +187,13 @@ function addPost(postParam) {
             
             if(flag) { //duplicate post title was found
                 deferred.reject('Post titles should be unique');
-            } else{
+            } else if( !postParam.post.title ) {
+                deferred.reject('Post title cannot be blank');
+            } else if( !postParam.post.description ){
+                deferred.reject('Post description cannot be blank');
+            } else {
                 createPost(user);
-            }      
-            
+            }            
         });
 
     function createPost(user) {
