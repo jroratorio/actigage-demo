@@ -1,0 +1,5 @@
+{
+    "connectionString": "mongodb://jroratorio:123456@ds113738.mlab.com:13738/user-info",
+    "apiUrl": "http://localhost:3000/api",
+    "secret": "REPLACE THIS WITH YOUR OWN SECRET, IT CAN BE ANY STRING"
+}

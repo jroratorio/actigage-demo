@@ -1,0 +1,27 @@
+﻿body {
+    padding: 20px 0;
+}
+
+.flash-message {
+    margin-top: 20px;
+}
+
+.floating-btn, #logout-btn {
+    float: right;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    
+    margin: 10px;
+}
+
+.floating-pp {
+    float: left;
+}
+
+.pp {
+    padding-right: 10px;
+    height: 40px;
+}
